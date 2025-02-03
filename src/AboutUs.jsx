@@ -249,7 +249,7 @@ const AboutUs = () => {
             </h5>
             <p>
               Get insights on offers, latest plans and prompt customer service
-              with Primefibre media pvt limited.
+              with Primefibre media pvt limited
             </p>
           </div>
         </section>
