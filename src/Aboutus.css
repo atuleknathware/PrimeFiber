@@ -1,0 +1,144 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .homepage {
+    text-align: center;
+    padding: 0;
+  }
+  
+  /* Hero Section */
+  .hero-section3 {
+    background-color: #004aad;
+    color: #fff;
+    padding: 3rem 1rem;
+  }
+  
+  .hero-section3 h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section3 p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 2rem;
+    background-color: #ffd700;
+    color: #004aad;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .cta-button:hover {
+    background-color: #f6c700;
+  }
+  
+  /* Features Section3 */
+  .features-section3 {
+    /* background-color: #f8f9fa; */
+    padding: 2rem 1rem;
+    margin-right: 45%;
+  }
+  
+  .features-section3 h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .features-section3 ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+   .features-section3 li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  /* Plans Section */
+  .plans-section {
+    padding: 2rem 1rem;
+  }
+  
+  .plan-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .plan-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plan-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #004aad;
+  }
+  
+  .plan-card p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .plan-button {
+    padding: 0.5rem 1rem;
+    background-color: #004aad;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .plan-button:hover {
+    background-color: #003580;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+
+  .hero-section3{
+    background-image: url('./images/pexels-brett-sayles-5326748.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    /* background-size: contain; */
+    height: 400px;
+    /* color:black; */
+  }
+
+
+  
+
+  .highlight {
+    background-color: #004aad; /* Change to any color */
+    padding: 5px;
+    border-radius: 5px;
+    color: white; /* Adjust text color for contrast */
+}
+  
+  

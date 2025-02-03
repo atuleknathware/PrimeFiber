@@ -1,0 +1,103 @@
+/* General Form Styling */
+.query-form-container {
+    width: 70%;
+    max-width: 800px; /* Prevents it from becoming too large on big screens */
+    min-width: 400px; /* Ensures it doesn't shrink too much on small screens */
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Heading */
+.query-form-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #004aad;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Form Layout */
+.query-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 70%;
+}
+
+/* Full-width fields */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Form Labels */
+.form-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f8f9fa;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Focus */
+.form-control:focus {
+    border-color: #004aad;
+    background: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 74, 173, 0.2);
+}
+
+/* Submit Button */
+.submit-btn {
+    grid-column: span 2;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #004aad;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #00378b;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .query-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-width, .submit-btn {
+        grid-column: span 1;
+    }
+    
+    .query-form-container {
+        width: 90%; /* Makes it more responsive on smaller screens */
+        padding: 2rem;
+    }
+}
+
+
+
+
