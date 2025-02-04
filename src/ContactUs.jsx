@@ -8,10 +8,7 @@ const containerStyle = {
     height: "400px",
   };
   
-  const center = {
-    lat: 19.8663876, // Replace with your latitude
-    lng: 75.3474575, // Replace with your longitude
-  };
+  
 
 const ContactUs = () => {
   return (
@@ -100,7 +97,7 @@ const ContactUs = () => {
             <div style={{display:"flex", justifyContent:"space-evenly",alignItems:"center", backgroundColor:"#ffea00",color:"black",fontWeight:"bold", width:"1000px", marginLeft:"12%"}}>
                 <img src="src\images\pexels-verma-harshil-4218546.jpg" alt="" style={{width:"150px"}}/>
                 <h5>A simple, reliable and affordable solution for unlimited internet access</h5>
-               <p> Get insights on offers, latest plans and prompt customer service with Gazon India.</p>
+               <p> Get insights on offers, latest plans and prompt customer service with Prime Fiber Media Pvt.</p>
             </div> 
         </section>
 
@@ -109,16 +106,17 @@ const ContactUs = () => {
 
         {/* Footer Section */}
 
-        <section>
-        <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+        <section style={{marginTop:"25px"}} >
+        {/* <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
         <Marker position={center} />
       </GoogleMap>
-    </LoadScript>
+    </LoadScript> */}
+    <iframe style={containerStyle} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.2384552443164!2d75.34097777499886!3d19.872150481503397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba362a1ed5a23%3A0x9914c9b8cabf575!2sPrimefiber%20Media%20Pvt%20Ltd!5e0!3m2!1smr!2sin!4v1738653414316!5m2!1smr!2sin" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         
-        <footer className="footer">
+        <footer className="footer" style={{marginTop:"25px"}}>
           <p>© 2025 SpeedNet. All rights reserved.</p>
         </footer>
       </div>
