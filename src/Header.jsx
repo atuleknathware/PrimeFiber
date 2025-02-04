@@ -1,17 +1,18 @@
 import React from 'react';
-import { NavLink  } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    //NavLink  To
     <header className="header">
-      <div className="header-logo"> <a href='/' style={{textDecoration:"none",color:"white"}}>Prime Fiber</a></div>
+      <div className="header-logo">
+        <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>Prime Fiber</NavLink>
+      </div>
       <nav className="header-nav">
-        <NavLink  to="/HomeBroadband" activeClassName="active" >Home Broadband</NavLink >
-        <NavLink  to="/Bandwidth-For-Business" activeClassName="active">Bandwidth For Business</NavLink >
-        <NavLink  to="/services" activeClassName="active">Services</NavLink >
-        <NavLink  to="/contactus" activeClassName="active">Contact</NavLink >
-        <NavLink  to="/aboutus" activeClassName="active">About Us</NavLink >
+        <NavLink to="/HomeBroadband" className={({ isActive }) => (isActive ? "active" : "")}>Home Broadband</NavLink>
+        <NavLink to="/Bandwidth-For-Business" className={({ isActive }) => (isActive ? "active" : "")}>Bandwidth For Business</NavLink>
+        <NavLink to="/services" className={({ isActive }) => (isActive ? "active" : "")}>Services</NavLink>
+        <NavLink to="/contactus" className={({ isActive }) => (isActive ? "active" : "")}>Contact</NavLink>
+        <NavLink to="/aboutus" className={({ isActive }) => (isActive ? "active" : "")}>About Us</NavLink>
       </nav>
     </header>
   );
