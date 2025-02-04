@@ -31,4 +31,7 @@
   color: #ffd700;
 }
 
-
+.active{
+  font-weight: bold !important;
+   color: #ffd700 !important;
+}
