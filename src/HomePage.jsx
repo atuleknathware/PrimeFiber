@@ -1,7 +1,12 @@
 import React from "react";
 import "./HomePage.css";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const handleServicesClick = ()=>{
+    navigate('/services');
+  }
   return (
     <div className="homepage">
       <section className="hero-section">
@@ -41,6 +46,7 @@ const HomePage = () => {
             marginTop:"55px",
             marginBottom:"55px"
           }}
+          onClick={handleServicesClick}
         >
           Our Services
         </button>

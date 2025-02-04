@@ -164,8 +164,18 @@ body, html {
     /* font-weight: bold; */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+
+  }
+
+  .box:nth-child(1) {
+    animation-delay: 0.2s;
   }
   
+  .box:hover{
+    background-color: #ffd700;
+    border: solid 6px #003580;
+  }
 
   * {
     margin: 0;
@@ -184,16 +194,24 @@ body, html {
   }
   
   .circle {
-    width: 150px; /* Diameter of the circle */
+    width: 150px;
     height: 145px;
-    background-color: #003580;; /* Blue background */
-    color: white; /* White text */
-    border-radius: 50%; /* Makes the div a circle */
+    background-color: #003580;
+    color: white;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-weight: bold;
+    padding: 20px;
+    border: solid 6px #ccc;
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+    cursor: pointer;
   }
   
+  .circle:hover {
+    background-color: #ffd700;
+    border: solid 6px #003580;
+  }
   
