@@ -7,6 +7,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import AboutUs from './AboutUs.jsx'
 import ContactUs from './ContactUs.jsx'
 import Services from './Services.jsx'
+import Login from './Login.jsx'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='/aboutus' element={<AboutUs/>}/>
         <Route path='/contactus' element={<ContactUs/>}/>
         <Route path='/services' element={<Services/>}/>
+        <Route path='/login' element={<Login/>}/>
 
     </Routes>
     </Router>
