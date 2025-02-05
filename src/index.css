@@ -57,7 +57,7 @@
 
 .login-container {
   width: 60%;
-  height: 400px;
+  height: auto;
   display: flex;
   flex-direction: row;
   box-shadow: 3px 0px 100px -25px;
@@ -137,4 +137,39 @@ input {
 
 .m-45 {
   margin-top: 45px;
+}
+
+
+
+/* Mobile (portrait) */
+@media screen and (max-width: 480px) {
+  /* Your styles for small screens */
+  .login-left {
+    display: none;
+}
+}
+
+/* Tablet (portrait) */
+@media screen and (max-width: 768px) {
+  /* Your styles for tablets */
+    .login-container{
+    flex-direction: column;
+    height: auto;
+    margin-top: 30%;
+    width: 70%;
+  }
+  .login-left,  .login-right{
+    width: 100%;
+  }
+}
+
+/* Tablet (landscape) / Small laptop */
+@media screen and (max-width: 1024px) {
+  /* Your styles for larger tablets or small laptops */
+
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1025px) {
+  /* Your styles for standard desktop monitors */
 }
