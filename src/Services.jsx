@@ -1,5 +1,7 @@
 import React from "react";
 import "./Services.css"; // Import the external CSS file
+import Footer from './Footer.jsx'
+
 
 const Services = () => {
   return (
@@ -87,6 +89,7 @@ const Services = () => {
           <li>Upto 6+ OTT Apps (Hotstar, Sony Live, Zee5, etc)</li>
         </ul>
       </div>
+      <Footer/>
     </>
   );
 };

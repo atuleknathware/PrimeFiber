@@ -1,5 +1,6 @@
 import React from "react";
 import "./Aboutus.css";
+import Footer from "./Footer";
 
 const AboutUs = () => {
   return (
@@ -257,9 +258,8 @@ const AboutUs = () => {
         {/* Plans Section */}
 
         {/* Footer Section */}
-        <footer className="footer">
-          <p>© 2025 SpeedNet. All rights reserved.</p>
-        </footer>
+        <Footer/>
+
       </div>
     </>
   );

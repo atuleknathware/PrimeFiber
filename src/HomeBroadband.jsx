@@ -1,9 +1,10 @@
 import React from 'react'
+import Footer from './Footer'
 
 const HomeBroadband = () => {
   return (
     <>
-
+         
       <section className="plans-section">
         <h2 style={{textAlign:"center"}}>Our Plans For Home Broadband</h2>
         <div className="plan-cards">
@@ -27,6 +28,8 @@ const HomeBroadband = () => {
           </div>
         </div>
       </section>
+      <Footer/>
+
 
     </>
   )

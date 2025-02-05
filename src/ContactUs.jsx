@@ -1,6 +1,7 @@
 import React from "react";
 import "./ContactUs.css";
 import QueryForm from "./QueryForm";
+import Footer from "./Footer";
 
 const containerStyle = {
     width: "100%",
@@ -81,9 +82,8 @@ const ContactUs = () => {
           ></iframe>
         </section>
 
-        <footer className="footer" style={{ marginTop: "25px" }}>
-          <p>© 2025 SpeedNet. All rights reserved.</p>
-        </footer>
+        <Footer/>
+
       </div>
     </>
   );
