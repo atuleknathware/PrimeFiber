@@ -1,6 +1,7 @@
 import React from "react";
 import "./HomePage.css";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -279,9 +280,8 @@ const HomePage = () => {
       </section>
 
       {/* Footer Section */}
-      <footer className="footer">
-        <p>© 2025 PrimeFiber. All rights reserved.</p>
-      </footer>
+      
+      <Footer/>
     </div>
   );
 };

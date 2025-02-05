@@ -1,5 +1,6 @@
 import React from "react";
 import './Commercial.css'
+import Footer from "./Footer";
 
 const Business = () => {
   return (
@@ -51,9 +52,8 @@ const Business = () => {
       </section>
 
       {/* Footer Section */}
-      <footer className="footer">
-        <p>© 2025 SpeedNet. All rights reserved.</p>
-      </footer>
+      <Footer/>
+
     </div>
   );
 };
