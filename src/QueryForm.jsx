@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./QueryForm.css";
 import { ToastContainer } from "react-toastify";
 import { handleError, handleSuccess } from "./utils";
@@ -10,24 +10,24 @@ const QueryForm = () => {
     Mobile_No: "",
     Email: "",
     Address: "",
+    Service_Type: "", // Default empty, so user must select
   });
 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
-    const copySignupinfo = { ...signupInfo };
-    copySignupinfo[name] = value;
-    setSignupInfo(copySignupinfo);
+    setSignupInfo((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    const { Full_Name, Mobile_No, Email, Address } = signupInfo;
-    if (!Full_Name || !Mobile_No || !Email || !Address) {
-      return handleError("Full_Name,Mobile_No,Email,Address Are Required");
+    const { Full_Name, Mobile_No, Email, Address, Service_Type } = signupInfo;
+
+    if (!Full_Name || !Mobile_No || !Email || !Address || !Service_Type) {
+      return handleError("All fields are required, including Service Type.");
     }
+
     try {
       const url = "http://localhost:8080/api/query";
       const response = await fetch(url, {
@@ -37,22 +37,18 @@ const QueryForm = () => {
         },
         body: JSON.stringify(signupInfo),
       });
+
       const result = await response.json();
       const { success, message, error } = result;
+
       if (success) {
         handleSuccess(message);
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
-      } else if (error) {
-        const details = error?.details[0].message;
-        handleError(details);
-      } else if (!success) {
-        handleError(message);
+        setTimeout(() => navigate("/"), 1000);
+      } else {
+        handleError(error?.details?.[0]?.message || message);
       }
-      console.log(result);
     } catch (err) {
-      handleError(err);
+      handleError("An error occurred while submitting the form.");
     }
   };
 
@@ -109,7 +105,28 @@ const QueryForm = () => {
           style={{ height: "120px", resize: "vertical" }}
         />
 
-        <button type="submit" className="submit-btn">
+        <label htmlFor="serviceType" className="form-label">
+          Select Service Type
+        </label>
+        <select
+          onChange={handleChange}
+          className="form-control"
+          id="serviceType"
+          name="Service_Type"
+          value={signupInfo.Service_Type}
+        >
+          <option value="" disabled>
+            -- Select Service Type --
+          </option>
+          <option value="Home Broadband">Home Broadband</option>
+          <option value="Bandwidth for Business">Bandwidth for Business</option>
+        </select>
+
+        <button
+          type="submit"
+          className="submit-btn"
+          style={{ width: "200px", marginLeft: "45%", marginBottom: "30px" }}
+        >
           Enquire
         </button>
       </form>

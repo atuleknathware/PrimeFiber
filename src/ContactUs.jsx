@@ -43,7 +43,7 @@ const ContactUs = () => {
               <div>
                 <i className="fa-solid fa-phone-volume"></i>
                 <h5>Phone Number</h5>
-                <p>02061930306 (Customer Care)</p>
+                <p>9762131385 (Customer Care)</p>
                 <p>+919762039307 (24/7) (Missed call Number)</p>
               </div>
             </div>
