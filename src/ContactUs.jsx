@@ -82,9 +82,10 @@ const ContactUs = () => {
           ></iframe>
         </section>
 
-        <Footer/>
 
       </div>
+      <Footer/>
+
     </>
   );
 };

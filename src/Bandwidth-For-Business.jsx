@@ -17,6 +17,43 @@ const Business = () => {
 </section>
 
       {/* Features Section */}
+     
+
+      {/* Plans Section */}
+      <section>
+        <h2>Internet Plans</h2>
+
+        <div className="container">
+          <table>
+            <thead>
+              <tr>
+                <th>Plan Name</th>
+                <th>Plan Speed (MBPS)</th>
+                <th>DATA</th>
+                <th>3 Months</th>
+                <th>6 Months</th>
+                <th>12 Months</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['Prime Stream 50 MBPS', '50 MBPS', 'Unlimited', '₹2247', '₹4399', '₹8499'],
+                ['Prime Stream 100 MBPS', '100 MBPS', 'Unlimited', '₹2697', '₹5299', '₹10499'],
+                ['Prime Stream 150 MBPS', '150 MBPS', 'Unlimited',  '₹3447', '₹6794', '₹13788'],
+                ['Prime Stream 300 MBPS', '300 MBPS', 'Unlimited',  '₹4674', '₹9200', '₹18599'],
+                ['Prime Stream 500 MBPS', '500 MBPS', 'Unlimited',  '₹6897', '₹13794', '₹27588'],
+                ['Prime Stream 1 GBPS', '1 GBPS', 'Unlimited', '₹8997', '₹17994', '₹35988']
+              ].map((plan, index) => (
+                <tr key={index}>
+                  {plan.map((data, i) => (
+                    <td key={i}>{data}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
       <section className="features-section">
         <h2>Why Choose Us?</h2>
         <ul>
@@ -25,32 +62,6 @@ const Business = () => {
           <li>Affordable Plans Tailored to Your Needs</li>
         </ul>
       </section>
-
-      {/* Plans Section */}
-      <section className="plans-section">
-        <h2>Our Plans</h2>
-        <div className="plan-cards">
-          <div className="plan-card">
-            <h3>Basic Plan</h3>
-            <p>Speed: Up to 50 Mbps</p>
-            <p>Price: ₹2649/month</p>
-            <button className="plan-button">Choose Plan</button>
-          </div>
-          <div className="plan-card">
-            <h3>Pro Plan</h3>
-            <p>Speed: Up to 150 Mbps</p>
-            <p>Price: ₹3999/month</p>
-            <button className="plan-button">Choose Plan</button>
-          </div>
-          <div className="plan-card">
-            <h3>Ultra Plan</h3>
-            <p>Speed: Up to 500 Mbps</p>
-            <p>Price: ₹4999/month</p>
-            <button className="plan-button">Choose Plan</button>
-          </div>
-        </div>
-      </section>
-
       {/* Footer Section */}
       <Footer/>
 

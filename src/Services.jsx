@@ -6,6 +6,17 @@ import Footer from './Footer.jsx'
 const Services = () => {
   return (
     <>
+
+<section className="hero-section10">
+    <div className="text">
+        <h1><span className="highlight">Welcome to PrimeFiber</span></h1>
+        <p style={{textAlign:"center"}}><span className="highlight" >Fast, Reliable, and Affordable Internet for Everyone!</span></p>
+        <button className="cta-button" style={{marginLeft:"45%"}}>
+            <i className="fa-solid fa-phone"> 9762039307</i>
+        </button>
+    </div>
+</section>
+
     <div style={{display: "flex"}}>
       <button  className="btn btn-primary" style={{margin:"4% auto"}}>Our Service</button>
       </div>
