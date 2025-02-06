@@ -6,7 +6,7 @@ import "./HomePage.css";
 import "./Popup.css";
 
 const HomePage = () => {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
   const navigate = useNavigate();
 
   const handleServicesClick = () => {
@@ -27,15 +27,18 @@ const HomePage = () => {
                 Fast, Reliable, and Affordable Internet for Everyone!
               </span>
             </p>
-            <button className="cta-button">
+            <a href="tel:+91 9762039307" className="cta-button">
               <i className="fa-solid fa-phone"> 9762039307</i>
-            </button>
+            </a>
 
-            {/* Enquiry Form Button */}
-            <div className="home-container" style={{ marginTop: "10px" }}>
-              <button className="open-popup-btn" onClick={() => setShowPopup(true)}>
+            <a className="cta-button" onClick={() => setShowPopup(true)}>
+              <i className="fa-solid fa-envelope">  Open Enquiry Form</i>
+            </a>
+
+            <div className="home-container" style={{ marginTop: "10px"}}>
+              {/* <button className="open-popup-btn btn btn-primary" onClick={() => setShowPopup(true)}>
                 Open Enquiry Form
-              </button>
+              </button> */}
 
               {/* Pop-up Form */}
               {showPopup && (
@@ -270,23 +273,23 @@ const HomePage = () => {
             </button>
             <div style={{ marginLeft: "100px" }}>
               <h1>Explore The Best Of Digital World</h1>
-              <i className="fa-solid fa-greater-than"></i>
+              {/* <i className="fa-solid fa-greater-than"></i> */}
               <h3>Lightning-Fast Speeds</h3>
               <p>Enjoy speeds ranging from 50 Mbps to 400 Mbps and beyond.</p>
-              <i className="fa-solid fa-greater-than"></i>
-              <h1>Unparalleled Reliability</h1>
+              {/* <i className="fa-solid fa-greater-than"></i> */}
+              <h3>Unparalleled Reliability</h3>
               <p>Count on 24/7 monitoring for uninterrupted internet access.</p>
 
-              <i className="fa-solid fa-greater-than"></i>
+              {/* <i className="fa-solid fa-greater-than"></i> */}
               <h3>Advanced Security</h3>
               <p>
                 Protect your online activity and data with advanced security
                 features.
               </p>
-              <i className="fa-solid fa-greater-than"></i>
+              {/* <i className="fa-solid fa-greater-than"></i> */}
               <h3>Dedicated Customer Support</h3>
               <p>Get the help you need with dedicated customer support.</p>
-              <i className="fa-solid fa-greater-than"></i>
+              {/* <i className="fa-solid fa-greater-than"></i> */}
               <h3>Flexible Plans</h3>
               <p>
                 Choose from a range of plans to fit your budget and requirements.
