@@ -18,16 +18,16 @@ const Services = () => {
 </section>
 
     <div style={{display: "flex"}}>
-      <button  className="btn btn-primary" style={{margin:"4% auto"}}>Our Service</button>
+      {/* <h1 style={{margin:"4% auto"}}>Our Service</h1> */}
       </div>
-      <h1>Explore the next ISP unlimited possibilities</h1>
+      <h1 style={{margin:"4% auto"}}>Explore the next ISP unlimited possibilities</h1>
 
       <div className="service-container">
         <div className="box">
           <div>
           <h5>Broadband</h5>
           <p>Experience lightning-fast broadband connectivity...</p>
-          <button className="btn btn-primary">Enquire Now</button>
+          {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
 
@@ -35,7 +35,7 @@ const Services = () => {
           <div>
           <h5>Leased Line</h5>
           <p>Unlock unparalleled reliability and dedicated bandwidth...</p>
-          <button className="btn btn-primary">Enquire Now</button>
+          {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
 
@@ -43,7 +43,7 @@ const Services = () => {
           <div>
           <h5>OTT Services</h5>
           <p>Access a diverse range of Over-The-Top (OTT) services...</p>
-          <button className="btn btn-primary">Enquire Now</button>
+          {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
 
@@ -51,7 +51,7 @@ const Services = () => {
           <div>
           <h5>Telephone Line</h5>
           <p>Stay connected with our dependable telephone line service...</p>
-          <button className="btn btn-primary">Enquire Now</button>
+          {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
 
@@ -59,7 +59,7 @@ const Services = () => {
           <div>
           <h5>Cloud & Hosting</h5>
           <p>Empower your online endeavors with robust cloud solutions...</p>
-          <button className="btn btn-primary">Enquire Now</button>
+          {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
       </div>

@@ -22,34 +22,35 @@ const ContactUs = () => {
           </div>
         </section>
 
-        <button className="btn btn-primary" style={{ marginTop: "25px" }}>Get in Touch</button>
+        <h1 style={{ marginTop: "25px" }}>Get in Touch</h1>
 
         <div style={{ display: "flex", justifyContent: "space-evenly", alignContent: "center" }}>
           <section className="features-section5" style={{ display: "flex", width: "1200px" }}>
             <div className="box">
               <div>
+                <i class="fa-brands fa-leanpub feature-icons"></i>
                 <h5>Learn More About PrimeFiber</h5>
                 <p>We would love to hear from you, fill in the form to get in touch with our executive.</p>
               </div>
             </div>
             <div className="box">
               <div>
-                <i className="fa-solid fa-location-dot"></i>
+                <i className="fa-solid fa-location-dot  feature-icons"></i>
                 <h5>Head Office</h5>
                 <p>F/12, Arihant Nagar, Jawahar Colony, Sindhi Colony, Chhatrapati Sambhaji Nagar, Maharashtra 431001</p>
               </div>
             </div>
             <div className="box">
               <div>
-                <i className="fa-solid fa-phone-volume"></i>
+                <i className="fa-solid fa-phone-volume feature-icons"></i>
                 <h5>Phone Number</h5>
-                <p>02061930306 (Customer Care)</p>
-                <p>+919762039307 (24/7) (Missed call Number)</p>
+                <p><a href="tel:+91 9762131385">+91 9762131385</a> (Customer Care)</p>
+                <p><a href="tel:+91 9762039307">+91 9762039307</a> (24/7) (Missed call Number)</p>
               </div>
             </div>
             <div className="box">
               <div>
-                <i className="fa-solid fa-envelope"></i>
+                <i className="fa-solid fa-envelope feature-icons"></i>
                 <h5>Email Us</h5>
                 <p>admin@primefibermedia.in</p>
               </div>

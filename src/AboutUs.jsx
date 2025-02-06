@@ -50,7 +50,7 @@ const AboutUs = () => {
                 reputation for providing unparalleled service and unbeatable
                 content. Armed with the most advanced technology, we have spread
                 our wings to cater to a vast cluster of subscribers across
-                Maharashtra & Goa, and are continually expanding to reach more
+                Maharashtra, and are continually expanding to reach more
                 areas within the state. Our skilled engineers and expert teams
                 are the backbone of our success, ensuring seamless installation
                 of our services at customer locations and efficiently servicing

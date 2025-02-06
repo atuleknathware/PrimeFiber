@@ -7,7 +7,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import AboutUs from './AboutUs.jsx'
 import ContactUs from './ContactUs.jsx'
 import Services from './Services.jsx'
-import Login from './Login.jsx'
+import Login from './Components/Login.jsx'
 
 const App = () => {
   return (

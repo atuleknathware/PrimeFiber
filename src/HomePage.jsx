@@ -6,7 +6,7 @@ import "./HomePage.css";
 import "./Popup.css";
 
 const HomePage = () => {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
 
   const handleServicesClick = () => {
@@ -145,17 +145,13 @@ const HomePage = () => {
 
         {/* Feature Icons */}
         <section className="services">
-          <button
+          <h1
             style={{
-              backgroundColor: "#003580",
-              width: "176px",
-              height: "30px",
-              color: "white",
               marginTop: "55px",
             }}
           >
             Our Features
-          </button>
+          </h1>
           <div className="container">
             <div className="circle">
               <p>
@@ -200,7 +196,7 @@ const HomePage = () => {
           <div className="boxes-container">
             <div className="box">
               <p>
-                <i className="fa-solid fa-headset"></i>
+                <i className="fa-solid fa-headset feature-icons"></i>
                 <br />
                 With faster internet speeds from Prime Fiber, virtual assistants
                 can quickly access and process large amounts of data, enabling them
@@ -210,7 +206,7 @@ const HomePage = () => {
             </div>
             <div className="box">
               <p>
-                <i className="fa-solid fa-house"></i>
+                <i className="fa-solid fa-house feature-icons"></i>
                 <br />
                 Transform your home with Prime fiber internet’s fast, reliable, and
                 secure connectivity for smart home automation and personalized
@@ -219,7 +215,7 @@ const HomePage = () => {
             </div>
             <div className="box">
               <p>
-                <i className="fa-solid fa-gamepad"></i>
+                <i className="fa-solid fa-gamepad feature-icons"></i>
                 <br />
                 Experience seamless and uninterrupted entertainment experience.
                 Connect with multiple players online and conquer the digital world
@@ -228,7 +224,7 @@ const HomePage = () => {
             </div>
             <div className="box">
               <p>
-                <i className="fa-solid fa-music"></i>
+                <i className="fa-solid fa-music feature-icons"></i>
                 <br />
                 Prime Fiber supports multiple devices, allowing users to stream on
                 multiple devices simultaneously without any loss in speed or
@@ -237,7 +233,7 @@ const HomePage = () => {
             </div>
             <div className="box">
               <p>
-                <i className="fa-solid fa-wifi"></i>
+                <i className="fa-solid fa-wifi feature-icons"></i>
                 <br />
                 Experience lightning-fast internet with PrimeFiber Stream, Connect,
                 Play multi-level games online with Prime fiber that never slows down.
@@ -245,7 +241,7 @@ const HomePage = () => {
             </div>
             <div className="box">
               <p>
-                <i className="fa-solid fa-video"></i>
+                <i className="fa-solid fa-video feature-icons"></i>
                 <br />
                 With faster internet speeds from PrimeFiber, virtual assistants can
                 quickly access and process large amounts of data, enabling them to
@@ -259,7 +255,7 @@ const HomePage = () => {
         {/* Why Choose Us Section */}
         <section style={{ display: "flex", marginTop: "55px" }}>
           <div>
-            <button
+            {/* <button
               style={{
                 backgroundColor: "#003580",
                 width: "176px",
@@ -270,7 +266,7 @@ const HomePage = () => {
               }}
             >
               Why Choose Us
-            </button>
+            </button> */}
             <div style={{ marginLeft: "100px" }}>
               <h1>Explore The Best Of Digital World</h1>
               {/* <i className="fa-solid fa-greater-than"></i> */}
