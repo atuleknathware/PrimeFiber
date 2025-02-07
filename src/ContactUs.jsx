@@ -16,9 +16,9 @@ const ContactUs = () => {
           <div className="text3">
             <h1><span className="highlight">Contact Us</span></h1>
             <p><span className="highlight">We would love to hear from you</span></p>
-            <button className="cta-button">
+            <a href="tel:+91 9762039307" className="cta-button" style={{marginLeft:"15%"}}>
               <i className="fa-solid fa-phone"> 9762039307</i>
-            </button>
+            </a>
           </div>
         </section>
 

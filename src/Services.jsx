@@ -11,9 +11,9 @@ const Services = () => {
     <div className="text">
         <h1><span className="highlight">Welcome to PrimeFiber</span></h1>
         <p style={{textAlign:"center"}}><span className="highlight" >Fast, Reliable, and Affordable Internet for Everyone!</span></p>
-        <button className="cta-button" style={{marginLeft:"45%"}}>
-            <i className="fa-solid fa-phone"> 9762039307</i>
-        </button>
+        <a href="tel:+91 9762039307" className="cta-button" style={{marginLeft:"45%"}}>
+              <i className="fa-solid fa-phone"> 9762039307</i>
+            </a>
     </div>
 </section>
 

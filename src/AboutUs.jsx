@@ -23,6 +23,9 @@ const AboutUs = () => {
                 Connect to a fast and reliable internet connection anywhere
               </span>
             </p>
+            <a href="tel:+91 9762039307" className="cta-button" style={{marginLeft:"5%"}}>
+              <i className="fa-solid fa-phone"> 9762039307</i>
+            </a>
           </div>
         </section>
 
