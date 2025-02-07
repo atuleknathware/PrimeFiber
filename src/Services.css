@@ -195,10 +195,10 @@ body, html {
     color: #333;
 }
 
-.homepage {
+/* .homepage {
     text-align: center;
     padding: 0;
-}
+} */
 
 /* Hero Section */
 .hero-section10 {
@@ -327,4 +327,8 @@ body, html {
     padding: 5px;
     border-radius: 5px;
     color: white;
+}
+
+.text{
+    margin-top: 135px;
 }

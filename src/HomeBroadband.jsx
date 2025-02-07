@@ -7,7 +7,7 @@ const HomeBroadband = () => {
     <>
       {/* Hero Section */}
       <section className="hero-section9">
-    <div className="text">
+    <div className="text5">
         <h1><span className="highlight">Welcome to PrimeFiber</span></h1>
         <p style={{textAlign:"center"}}><span className="highlight" >Fast, Reliable, and Affordable Internet for Everyone!</span></p>
         <button className="cta-button" style={{marginLeft:"45%"}}>

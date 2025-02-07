@@ -13,7 +13,7 @@ const ContactUs = () => {
     <>
       <div className="homepage">
         <section className="hero-section2" style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
-          <div className="text">
+          <div className="text3">
             <h1><span className="highlight">Contact Us</span></h1>
             <p><span className="highlight">We would love to hear from you</span></p>
             <button className="cta-button">

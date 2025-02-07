@@ -14,7 +14,7 @@ const AboutUs = () => {
             justifyContent: "space-evenly",
           }}
         >
-          <div className="text">
+          <div className="text1">
             <h1>
               <span className="highlight">About Us</span>
             </h1>

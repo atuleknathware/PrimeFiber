@@ -18,7 +18,7 @@ const HomePage = () => {
       <div className="homepage">
         {/* Hero Section */}
         <section className="hero-section">
-          <div className="text">
+          <div className="text9">
             <h1>
               <span className="highlight">Welcome to PrimeFiber</span>
             </h1>

@@ -53,6 +53,14 @@ const Business = () => {
             </tbody>
           </table>
         </div>
+        <h3>Our Patners</h3>
+        <section style={{display:"flex",alignItems:"center",justifyContent:"space-evenly"}}>
+          <img className="patners-logo1" src="src\logos\AsianHospital.jpg" alt="" />
+          <img className="patners-logo" src="src\logos\DhootHospital.jpg" alt="" />
+          <img className="patners-logo2" src="src\logos\ENCORE.jpg" alt="" />
+          <img className="patners-logo" src="src\logos\Monginis.jpg" alt="" />
+          <img className="patners-logo1" src="src\logos\MYFM.jpg" alt="" />
+        </section>
       </section>
       <section className="features-section">
         <h2>Why Choose Us?</h2>
