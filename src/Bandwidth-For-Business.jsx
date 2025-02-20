@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Commercial.css";
 import Footer from "./Footer";
+import Header from "./Header";
+import { useEffect } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Business = () => {
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/businessPlans/getall");
+        console.log("API Response:", response.data); // Log response
+        setUsers(response.data.data); 
+      } catch (error) {
+        toast.error("Failed to fetch data", { position: "top-right" });
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
+    <>
+    <Header />
     <div className="homepage">
       {/* Hero Section */}
       <section className="hero-section1">
@@ -26,12 +48,13 @@ const Business = () => {
 
       {/* Plans Section */}
       <section>
-        <h2>Internet Plans</h2>
+        <h1> Bandwidth For Business</h1>
 
         <div className="container">
           <table>
             <thead>
               <tr>
+              <th>Sr No</th>
                 <th>Plan Name</th>
                 <th>Plan Speed (MBPS)</th>
                 <th>DATA</th>
@@ -41,66 +64,28 @@ const Business = () => {
               </tr>
             </thead>
             <tbody>
-              {[
-                [
-                  "Prime Stream 50 MBPS",
-                  "50 MBPS",
-                  "Unlimited",
-                  "₹2247",
-                  "₹4399",
-                  "₹8499",
-                ],
-                [
-                  "Prime Stream 100 MBPS",
-                  "100 MBPS",
-                  "Unlimited",
-                  "₹2697",
-                  "₹5299",
-                  "₹10499",
-                ],
-                [
-                  "Prime Stream 150 MBPS",
-                  "150 MBPS",
-                  "Unlimited",
-                  "₹3447",
-                  "₹6794",
-                  "₹13788",
-                ],
-                [
-                  "Prime Stream 300 MBPS",
-                  "300 MBPS",
-                  "Unlimited",
-                  "₹4674",
-                  "₹9200",
-                  "₹18599",
-                ],
-                [
-                  "Prime Stream 500 MBPS",
-                  "500 MBPS",
-                  "Unlimited",
-                  "₹6897",
-                  "₹13794",
-                  "₹27588",
-                ],
-                [
-                  "Prime Stream 1 GBPS",
-                  "1 GBPS",
-                  "Unlimited",
-                  "₹8997",
-                  "₹17994",
-                  "₹35988",
-                ],
-              ].map((plan, index) => (
-                <tr key={index}>
-                  {plan.map((data, i) => (
-                    <td key={i}>{data}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
+  {Array.isArray(users) ? (
+    users.map((user, index) => (
+      <tr key={user._id}>
+        <td>{index + 1}</td>
+        <td>{user.planName}</td>
+        <td>{user.planSpeed}</td>
+        <td>{user.planData}</td>
+        <td>{user.threeMonth}</td>
+        <td>{user.sixMonth}</td>
+        <td>{user.twelveMonth}</td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+    </tr>
+  )}
+</tbody>
           </table>
         </div>
-        <h3>Our Patners</h3>
+        <h3 style={{
+            marginTop:"100px"
+        }}>Our Patners</h3>
         <section
           style={{
             display: "flex",
@@ -131,9 +116,9 @@ const Business = () => {
           <li>Affordable Plans Tailored to Your Needs</li>
         </ul>
       </section>
-      {/* Footer Section */}
       <Footer />
     </div>
+    </>
   );
 };
 

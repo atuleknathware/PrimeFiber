@@ -1,0 +1,53 @@
+ /* Sidebar styling */
+ .sidebar {
+    height: 100vh;
+    width: 250px;
+    background: #343a40; /* Dark Sidebar */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    transition: all 0.3s;
+}
+
+.sidebar a {
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #495057;
+}
+
+.content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+.sidebar .active {
+    background: #007bff;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.collapsed {
+    width: 60px;
+}
+
+.collapsed a span {
+    display: none;
+}

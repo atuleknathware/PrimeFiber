@@ -1,12 +1,13 @@
 import React from "react";
 import "./Services.css"; // Import the external CSS file
 import Footer from './Footer.jsx'
+import Header from "./Header.jsx";
 
 
 const Services = () => {
   return (
     <>
-
+<Header />
 <section className="hero-section10">
     <div className="text">
         <h1><span className="highlight">Welcome to PrimeFiber</span></h1>

@@ -1,10 +1,12 @@
 import React from "react";
 import "./Aboutus.css";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const AboutUs = () => {
   return (
     <>
+    <Header />
       <div className="homepage">
         <section
           className="hero-section3"

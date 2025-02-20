@@ -2,6 +2,7 @@ import React from "react";
 import "./ContactUs.css";
 import QueryForm from "./QueryForm";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const containerStyle = {
     width: "100%",
@@ -11,6 +12,7 @@ const containerStyle = {
 const ContactUs = () => {
   return (
     <>
+    <Header />
       <div className="homepage">
         <section className="hero-section2" style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
           <div className="text3">

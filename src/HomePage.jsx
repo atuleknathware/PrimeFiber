@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import QueryForm from "./QueryForm"; // Assuming QueryForm component exists
 import "./HomePage.css";
 import "./Popup.css";
+import Header from "./Header";
 
 const HomePage = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -15,6 +16,7 @@ const HomePage = () => {
 
   return (
     <>
+     <Header/>
       <div className="homepage">
         {/* Hero Section */}
         <section className="hero-section">

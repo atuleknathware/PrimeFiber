@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from './Footer';
 import './HomeBroadband.css';
+import Header from './Header';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const HomeBroadband = () => {
+
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/plans/getAll");
+        console.log("API Response:", response.data); // Log response
+        setUsers(response.data.data); 
+      } catch (error) {
+        toast.error("Failed to fetch data", { position: "top-right" });
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
+  
+
   return (
     <>
+     <Header/>
       {/* Hero Section */}
       <section className="hero-section9">
     <div className="text5">
@@ -38,6 +60,7 @@ const HomeBroadband = () => {
           <table>
             <thead>
               <tr>
+              <th>Sr No</th>
                 <th>Plan Name</th>
                 <th>Plan Speed (MBPS)</th>
                 <th>DATA</th>
@@ -49,23 +72,25 @@ const HomeBroadband = () => {
               </tr>
             </thead>
             <tbody>
-              {[
-                ['Prime HD1', '40 MBPS', 'Unlimited', '₹499', '₹1497', '₹2994', '₹5988', 'X'],
-                ['Prime HD2', '75 MBPS', 'Unlimited', '₹650', '₹1950', '₹3900', '₹7800', 'X'],
-                ['Prime HD3', '100 MBPS', 'Unlimited', '₹700', '₹2100', '₹4200', '₹8400', 'X'],
-                ['Prime HD4', '150 MBPS', 'Unlimited', '₹799', '₹2397', '₹4794', '₹9588', 'X'],
-                ['Prime HD5', '200 MBPS', 'Unlimited', '₹999', '₹2997', '₹5994', '₹11988', '✔'],
-                ['Prime HD6', '300 MBPS', 'Unlimited', '₹1399', '₹4197', '₹8394', '₹16788', '✔'],
-                ['Prime HD7', '500 MBPS', 'Unlimited', '₹1624', '₹4872', '₹9744', '₹19488', '✔'],
-                ['Prime HD8', '1 GBPS', 'Unlimited', '₹2000', '₹6000', '₹12000', '₹24000', '✔'],
-              ].map((plan, index) => (
-                <tr key={index}>
-                  {plan.map((data, i) => (
-                    <td key={i}>{data}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
+  {Array.isArray(users) ? (
+    users.map((user, index) => (
+      <tr key={user._id}>
+        <td>{index + 1}</td>
+        <td>{user.planName}</td>
+        <td>{user.planSpeed}</td>
+        <td>{user.planData}</td>
+        <td>{user.oneMonth}</td>
+        <td>{user.threeMonth}</td>
+        <td>{user.sixMonth}</td>
+        <td>{user.twelveMonth}</td>
+        <td>{user.ott}</td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+    </tr>
+  )}
+</tbody>
           </table>
         </div>
       </section>
