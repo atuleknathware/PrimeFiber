@@ -25,22 +25,26 @@ const Header = () => {
     <header className="header">
       <div className="header-logo">
         <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
-          <table
-            style={{
-              marginTop: "20px",
-              width: "100%",
-              borderCollapse: "collapse",
-            }}
-          >
-            <tbody>
-              <img
-                src={logo.img}
-                alt="User Logo"
-                width="50"
-                // onError={(e) => (e.target.src = "/default-image.png")} // Fallback on error
-              />
-            </tbody>
-          </table>
+        <table
+  style={{
+    marginTop: "20px",
+    width: "100%",
+    borderCollapse: "collapse",
+  }}
+>
+  <tbody>
+    <tr>
+      <td>
+        <img
+          src={logo.img}
+          alt="User Logo"
+          width="50"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
         </NavLink>
       </div>
       <nav className="header-nav">

@@ -134,16 +134,26 @@ const Business = () => {
             <img className="patners-logo" src="src\logos\Monginis.jpg" alt="" />
             <img className="patners-logo1" src="src\logos\MYFM.jpg" alt="" />
           </section> */}
-<section>
-<tbody>
-              <img
-                src={logo.img}
-                alt="User Logo"
-                width="50"
-                // onError={(e) => (e.target.src = "/default-image.png")} // Fallback on error
-              />
-            </tbody>
+<section
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    flexWrap: "wrap",
+    gap: "10px",
+  }}
+>
+  {logo.length > 0 ? (
+    logo.map((data) => (
+      <div key={data._id}>
+        <img src={data.img} alt="Partner Logo" width="100" />
+      </div>
+    ))
+  ) : (
+    <p>No partner logos available.</p>
+  )}
 </section>
+
 
         </section>
         <section className="features-section">

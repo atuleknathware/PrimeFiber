@@ -79,6 +79,42 @@ export const Addpatners = () => {
     }
   };
   return (
-    <div>Addpatners</div>
+    <>
+    <div className="content">
+    <div className="mt-4">
+      <h2 className="mb-4">{id ? "Update Logo" : "Add Patners"}</h2>
+      <div>
+        <Link to={"/admin"}>Back</Link>
+      </div>
+
+      {/* Display Current Image if in Update Mode */}
+      {currentImage && (
+        <div className="mb-3">
+          <h5>Current Image:</h5>
+          <img src={currentImage} alt="Current Logo" width="150" />
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="form-label">Image</label>
+          <input
+            style={{ height: "45px" }}
+            type="file"
+            className="form-control"
+            name="img"
+            accept="image/*"
+            onChange={inputChangeHandler}
+            required
+          />
+        </div>
+
+        <button type="submit" className="btn btn-primary">
+          {id ? "Update Logo" : "Add Patners"}
+        </button>
+      </form>
+    </div>
+  </div>
+</>
   )
 }
