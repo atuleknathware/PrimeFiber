@@ -4,8 +4,9 @@ import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Addlogo = () => {
-  const [formData, setFormData] = useState({ img: "" });
+
+export const Addpatners = () => {
+    const [formData, setFormData] = useState({ img: "" });
   const [currentImage, setCurrentImage] = useState("");
   const navigate = useNavigate();
   const { id } = useParams(); // Get ID from URL
@@ -14,7 +15,7 @@ const Addlogo = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:8080/api/logo/getone/${id}`)
+        .get(`http://localhost:8080/api/partners/getone/${id}`)
         .then((res) => {
           console.log("API Response:", res.data);
           if (res.data.data?.img) {
@@ -49,7 +50,7 @@ const Addlogo = () => {
     if (id) {
       // Update Logo
       await axios
-        .put(`http://localhost:8080/api/logo/update/${id}`, formDataToSend, {
+        .put(`http://localhost:8080/api/partners/update/${id}`, formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
@@ -63,7 +64,7 @@ const Addlogo = () => {
     } else {
       // Create New Logo
       await axios
-        .post("http://localhost:8080/api/logo/create", formDataToSend, {
+        .post("http://localhost:8080/api/partners/create", formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
@@ -77,46 +78,7 @@ const Addlogo = () => {
         });
     }
   };
-
   return (
-    <>
-      <div className="content">
-        <div className="mt-4">
-          <h2 className="mb-4">{id ? "Update Logo" : "Add Logo"}</h2>
-          <div>
-            <Link to={"/admin"}>Back</Link>
-          </div>
-
-          {/* Display Current Image if in Update Mode */}
-          {currentImage && (
-            <div className="mb-3">
-              <h5>Current Image:</h5>
-              <img src={currentImage} alt="Current Logo" width="150" />
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label className="form-label">Image</label>
-              <input
-                style={{ height: "45px" }}
-                type="file"
-                className="form-control"
-                name="img"
-                accept="image/*"
-                onChange={inputChangeHandler}
-                required
-              />
-            </div>
-
-            <button type="submit" className="btn btn-primary">
-              {id ? "Update Logo" : "Add Logo"}
-            </button>
-          </form>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Addlogo;
+    <div>Addpatners</div>
+  )
+}

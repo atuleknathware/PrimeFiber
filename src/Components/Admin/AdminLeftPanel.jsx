@@ -22,11 +22,11 @@ const AdminLeftPanel = () => {
         <Link to='/admin/businessplan'>
           <i className="fas fa-cogs" /> <span>Bussiness Plan Management</span>
         </Link>
-        <Link to="/admin/logo/update">
+        <Link to={`/admin/logo/update/`}>
           <i className="fas fa-chart-bar" /> <span>Logo</span>
         </Link>
-        <Link to="#">
-          <i className="fas fa-chart-bar" /> <span>Data Inserted in website</span>
+        <Link to={`/admin/patners/add`}>
+          <i className="fas fa-chart-bar" /> <span>add patners</span>
         </Link>
         <a href="#" onClick={handleLogOut}>
           <i className="fas fa-sign-out-alt" /> <span>Logout</span>

@@ -11,6 +11,7 @@ import EditHomePlans from "./EditHomePlans";
 import EditBusinessPlans from "./EditBusinessPlans";
 import Logo from "./LogoUpdate";
 import Addlogo from "./Addlogo"
+import { Addpatners } from "./Addpatners";
 
 function AdminRoutes() {
     const navigate = useNavigate();
@@ -28,6 +29,7 @@ function AdminRoutes() {
     <Routes>
       <Route path="/" element={<Dashboard />} />
       <Route path="/addlogo" element={<Addlogo />} />
+      
       {/* <Route path="/logo  " element={<Logo />} /> */}
 
 
@@ -36,10 +38,15 @@ function AdminRoutes() {
 
       <Route path="/logo/update/" element={<Logo/>} />
 
+      <Route path="/patners/add" element={<Addpatners/>} />
+
+      
+
 
       <Route path="/homeplans" element={<HomePlans />} />
       <Route path="/homeplans/add" element={<AddHomePlan />} />
       <Route path="/homeplans/edit/:id" element={<EditHomePlans />} />
+      
 
       <Route path="/businessplan" element={<BusinessPlan />} />
       <Route path="/businessplan/add" element={<AddBusinessPlan />} />
