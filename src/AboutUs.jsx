@@ -87,7 +87,7 @@ const AboutUs = () => {
           >
             <div className="box">
                 <div>
-                <i class="fa-solid fa-globe"></i>
+                <i className="fa-solid fa-globe"></i>
               <h5>Wide Coverage</h5>
               <p>
                 We have a vast network that covers a significant portion of
@@ -98,7 +98,7 @@ const AboutUs = () => {
             </div>
             <div className="box">
                 <div>
-                <i class="fa-solid fa-rocket"></i>
+                <i className="fa-solid fa-rocket"></i>
               <h5>Cutting-Edge Technology</h5>
               <p>
                 We use the latest technology to provide lightning-fast internet
@@ -110,7 +110,7 @@ const AboutUs = () => {
 
             <div className="box">
                 <div>
-                <i class="fa-solid fa-headset"></i>
+                <i className="fa-solid fa-headset"></i>
               <h5>Customer Service</h5>
               <p>
                 At Prime Fiber, we put our customers first, and our team of
