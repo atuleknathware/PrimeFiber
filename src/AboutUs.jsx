@@ -1,10 +1,12 @@
 import React from "react";
 import "./Aboutus.css";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const AboutUs = () => {
   return (
     <>
+    <Header />
       <div className="homepage">
         <section
           className="hero-section3"
@@ -14,7 +16,7 @@ const AboutUs = () => {
             justifyContent: "space-evenly",
           }}
         >
-          <div className="text">
+          <div className="text1">
             <h1>
               <span className="highlight">About Us</span>
             </h1>
@@ -23,6 +25,9 @@ const AboutUs = () => {
                 Connect to a fast and reliable internet connection anywhere
               </span>
             </p>
+            <a href="tel:+91 9762039307" className="cta-button" style={{marginLeft:"5%"}}>
+              <i className="fa-solid fa-phone"> 9762039307</i>
+            </a>
           </div>
         </section>
 
@@ -82,7 +87,7 @@ const AboutUs = () => {
           >
             <div className="box">
                 <div>
-                <i class="fa-solid fa-globe"></i>
+                <i className="fa-solid fa-globe"></i>
               <h5>Wide Coverage</h5>
               <p>
                 We have a vast network that covers a significant portion of
@@ -93,7 +98,7 @@ const AboutUs = () => {
             </div>
             <div className="box">
                 <div>
-                <i class="fa-solid fa-rocket"></i>
+                <i className="fa-solid fa-rocket"></i>
               <h5>Cutting-Edge Technology</h5>
               <p>
                 We use the latest technology to provide lightning-fast internet
@@ -105,7 +110,7 @@ const AboutUs = () => {
 
             <div className="box">
                 <div>
-                <i class="fa-solid fa-headset"></i>
+                <i className="fa-solid fa-headset"></i>
               <h5>Customer Service</h5>
               <p>
                 At Prime Fiber, we put our customers first, and our team of

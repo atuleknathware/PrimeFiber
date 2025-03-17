@@ -1,19 +1,20 @@
 import React from "react";
 import "./Services.css"; // Import the external CSS file
 import Footer from './Footer.jsx'
+import Header from "./Header.jsx";
 
 
 const Services = () => {
   return (
     <>
-
+<Header />
 <section className="hero-section10">
     <div className="text">
         <h1><span className="highlight">Welcome to PrimeFiber</span></h1>
         <p style={{textAlign:"center"}}><span className="highlight" >Fast, Reliable, and Affordable Internet for Everyone!</span></p>
-        <button className="cta-button" style={{marginLeft:"45%"}}>
-            <i className="fa-solid fa-phone"> 9762039307</i>
-        </button>
+        <a href="tel:+91 9762039307" className="cta-button" style={{marginLeft:"45%"}}>
+              <i className="fa-solid fa-phone"> 9762039307</i>
+            </a>
     </div>
 </section>
 

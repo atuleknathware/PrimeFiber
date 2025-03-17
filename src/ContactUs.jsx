@@ -2,6 +2,7 @@ import React from "react";
 import "./ContactUs.css";
 import QueryForm from "./QueryForm";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const containerStyle = {
     width: "100%",
@@ -11,14 +12,15 @@ const containerStyle = {
 const ContactUs = () => {
   return (
     <>
+    <Header />
       <div className="homepage">
         <section className="hero-section2" style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
-          <div className="text">
+          <div className="text3">
             <h1><span className="highlight">Contact Us</span></h1>
             <p><span className="highlight">We would love to hear from you</span></p>
-            <button className="cta-button">
+            <a href="tel:+91 9762039307" className="cta-button" style={{marginLeft:"15%"}}>
               <i className="fa-solid fa-phone"> 9762039307</i>
-            </button>
+            </a>
           </div>
         </section>
 

@@ -96,11 +96,13 @@ body, html {
     font-family: Arial, sans-serif;
     color: #333;
 }
-
+/* 
 .homepage {
     text-align: center;
     padding: 0;
-}
+    margin-top: 68px;
+
+} 
 
 /* Hero Section */
 .hero-section9 {
@@ -216,6 +218,8 @@ body, html {
     background-image: url('./images/man-woman-boy-looking-laptop-screen-2048x1363.jpg');
     background-size: cover; 
     background-position: center; 
+    background-position: center top 20px;
+
     background-repeat: no-repeat;
     background-attachment: fixed; 
     /* background-size: contain; */
@@ -229,4 +233,8 @@ body, html {
     padding: 5px;
     border-radius: 5px;
     color: white;
+}
+
+.text5{
+margin-top: 168px;
 }

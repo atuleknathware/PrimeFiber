@@ -181,3 +181,28 @@ input {
 }
 
 
+.patners-logo1{
+  width: 90px;
+}
+
+.patners-logo{
+  width: 150px;
+}
+
+.patners-logo2{
+  width: 200px;
+}
+
+.homepage {
+  text-align: center;
+  padding: 0;
+  margin-top: 68px;
+
+}
+
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
