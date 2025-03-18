@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   const [logo, setLogo] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -13,7 +15,7 @@ const Header = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/logo");
-      console.log("API Response:", response.data); // Log response
+      console.log("API Response:", response.data);
       setLogo(response.data.data);
     } catch (error) {
       toast.error("Failed to fetch data", { position: "top-right" });
@@ -23,31 +25,15 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header-logo">
-        <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
-        <table
-  style={{
-    marginTop: "20px",
-    width: "100%",
-    borderCollapse: "collapse",
-  }}
->
-  <tbody>
-    <tr>
-      <td>
-        <img
-          src={logo.img}
-          alt="User Logo"
-          width="50"
-        />
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+      {/* Logo on the left */}
+      <div className="header-left">
+        <NavLink to="/" className="logo-link">
+          <img src={logo.img} alt="User Logo" className="header-logo" />
         </NavLink>
       </div>
-      <nav className="header-nav">
+
+      {/* Navigation links */}
+      <nav className={`header-nav ${menuOpen ? "show" : ""}`}>
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "active" : "")}
@@ -58,7 +44,7 @@ const Header = () => {
           to="/HomeBroadband"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          Broadband For HomeUse
+          Broadband For Home
         </NavLink>
         <NavLink
           to="/Bandwidth-For-Business"
@@ -85,6 +71,11 @@ const Header = () => {
           About Us
         </NavLink>
       </nav>
+
+      {/* Toggle button on the right */}
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
     </header>
   );
 };

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./Commercial.css";
-import Footer from "./Footer";
-import Header from "./Header";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import "./Commercial.css"; // Ensure styles are properly linked
+import Footer from "./Footer";
+import Header from "./Header";
+import MobileNo from "./MobileNo";
 
 const Business = () => {
   const [users, setUsers] = useState([]);
@@ -13,16 +13,13 @@ const Business = () => {
   useEffect(() => {
     fetchData();
     fetchData1();
-
   }, []);
-
 
   const fetchData = async () => {
     try {
       const response = await axios.get(
         "http://localhost:8080/api/businessPlans/getall"
       );
-      console.log("API Response:", response.data); // Log response
       setUsers(response.data.data);
     } catch (error) {
       toast.error("Failed to fetch data", { position: "top-right" });
@@ -30,18 +27,15 @@ const Business = () => {
     }
   };
 
-  
   const fetchData1 = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/logo");
-      console.log("API Response:", response.data); // Log response
+      const response = await axios.get("http://localhost:8080/api/logo/");
       setLogo(response.data.data);
     } catch (error) {
-      toast.error("Failed to fetch data", { position: "top-right" });
+      toast.error("Failed to fetch logos", { position: "top-right" });
       console.error(error);
     }
   };
-
 
   return (
     <>
@@ -58,23 +52,18 @@ const Business = () => {
                 Fast, Reliable, and Affordable Internet for Everyone!
               </span>
             </p>
-            <a
-              href="tel:+91 9762039307"
-              className="cta-button"
-              style={{ marginLeft: "8%" }}
-            >
-              <i className="fa-solid fa-phone"> 9762039307</i>
-            </a>
+            <div style={{ width: "400px", height: "200px" }}>
+              <a href={`tel:+91${MobileNo}`} className="cta-button">
+                <MobileNo />
+              </a>
+            </div>
           </div>
         </section>
 
-        {/* Features Section */}
-
         {/* Plans Section */}
         <section>
-          <h1> Bandwidth For Business</h1>
-
-          <div className="container">
+          <h1>Bandwidth For Business</h1>
+          <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -101,61 +90,46 @@ const Business = () => {
                     </tr>
                   ))
                 ) : (
-                  <tr></tr>
+                  <tr>
+                    <td colSpan="7">No plans available</td>
+                  </tr>
                 )}
               </tbody>
             </table>
           </div>
-          <h3
-            style={{
-              marginTop: "100px",
-            }}
-          >
-            Our Patners
-          </h3>
-          {/* <section
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
+
+          {/* Partners Section */}
+          <h3 className="partners-heading">Our Partners</h3>
+          <section className="partners-section">
             <img
-              className="patners-logo1"
-              src="src\logos\AsianHospital.jpg"
-              alt=""
+              className="partners-logo"
+              src="src/logos/AsianHospital.jpg"
+              alt="Asian Hospital"
             />
             <img
-              className="patners-logo"
-              src="src\logos\DhootHospital.jpg"
-              alt=""
+              className="partners-logo"
+              src="src/logos/DhootHospital.jpg"
+              alt="Dhoot Hospital"
             />
-            <img className="patners-logo2" src="src\logos\ENCORE.jpg" alt="" />
-            <img className="patners-logo" src="src\logos\Monginis.jpg" alt="" />
-            <img className="patners-logo1" src="src\logos\MYFM.jpg" alt="" />
-          </section> */}
-<section
-  style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-evenly",
-    flexWrap: "wrap",
-    gap: "10px",
-  }}
->
-  {logo.length > 0 ? (
-    logo.map((data) => (
-      <div key={data._id}>
-        <img src={data.img} alt="Partner Logo" width="100" />
-      </div>
-    ))
-  ) : (
-    <p>No partner logos available.</p>
-  )}
-</section>
-
-
+            <img
+              className="partners-logo"
+              src="src/logos/ENCORE.jpg"
+              alt="ENCORE"
+            />
+            <img
+              className="partners-logo"
+              src="src/logos/Monginis.jpg"
+              alt="Monginis"
+            />
+            <img
+              className="partners-logo"
+              src="src/logos/MYFM.jpg"
+              alt="MYFM"
+            />
+          </section>
         </section>
+
+        {/* Features Section */}
         <section className="features-section">
           <h2>Why Choose Us?</h2>
           <ul>
@@ -164,6 +138,7 @@ const Business = () => {
             <li>Affordable Plans Tailored to Your Needs</li>
           </ul>
         </section>
+
         <Footer />
       </div>
     </>

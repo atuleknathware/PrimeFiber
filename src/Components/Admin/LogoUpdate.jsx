@@ -3,14 +3,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import { useNavigate, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
 const Logo = () => {
   const [formData, setFormData] = useState({ img: "" });
   const [currentImage, setCurrentImage] = useState("");
   const navigate = useNavigate();
-
 
   useEffect(() => {
     fetchData();
@@ -19,7 +17,7 @@ const Logo = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/logo");
-      console.log("API Response:", response.data); // Log response
+      console.log("API Response:", response.data);
       setCurrentImage(response.data.data);
     } catch (error) {
       toast.error("Failed to fetch data", { position: "top-right" });
@@ -27,29 +25,6 @@ const Logo = () => {
     }
   };
 
-
-  // 🔍 Fetch existing logo for Update Mode
-  // useEffect(() => {
-  //   if (id) {
-  //     axios
-  //       .get(`http://localhost:8080/api/logo/getone/${id}`)
-  //       .then((res) => {
-  //         console.log("API Response:", res.data);
-  //         if (res.data.data?.img) {
-  //           setCurrentImage(
-  //             res.data.data.img.startsWith("http")
-  //               ? res.data.data.img
-  //               : `http://localhost:8080${res.data.data.img}`
-  //           );
-  //         }
-  //       })
-  //       .catch((err) => {
-  //         console.error("Error fetching logo:", err);
-  //       });
-  //   }
-  // }, [id]);
-
-  // 📂 Handle Image Selection
   const inputChangeHandler = (e) => {
     const { name, files } = e.target;
     if (files && files[0]) {
@@ -57,13 +32,12 @@ const Logo = () => {
     }
   };
 
-  // 🔄 Handle Update for Editing an Existing Logo
   const handleUpdate = async (e) => {
     e.preventDefault();
     const formDataToSend = new FormData();
     formDataToSend.append("img", formData.img);
-    const {_id} = currentImage;
- 
+    const { _id } = currentImage;
+
     await axios
       .put(`http://localhost:8080/api/logo/${_id}`, formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" },
@@ -83,7 +57,12 @@ const Logo = () => {
       <div className="content">
         <div className="mt-4">
           <h2 className="mb-4">Update Logo</h2>
-          <Link to={"/admin"}>Back</Link>
+          <Link to="/admin">Back</Link>
+
+          {/* Add Logo Button */}
+          <Link to="/admin/addlogo">
+            <button className="btn btn-primary ms-3">Add Logo</button>
+          </Link>
 
           {/* Display Current Image */}
           {currentImage && (
@@ -106,7 +85,9 @@ const Logo = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-success">Update Logo</button>
+            <button type="submit" className="btn btn-success">
+              Update Logo
+            </button>
           </form>
         </div>
       </div>

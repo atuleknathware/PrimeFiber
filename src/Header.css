@@ -1,0 +1,99 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #004aad;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  max-width: 80px;
+  height: auto;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: white;
+}
+
+/* Navigation styles */
+.header-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+  color: #ffd700;
+}
+
+.active {
+  font-weight: bold !important;
+  color: #ffd700 !important;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  /* Show menu toggle button only on small screens */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Navigation */
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #004aad;
+    padding: 1rem 0;
+  }
+
+  .header-nav.show {
+    display: flex;
+  }
+
+  .header-nav a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+}

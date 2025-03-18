@@ -1,27 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import QueryForm from "./QueryForm"; // Assuming QueryForm component exists
+import QueryForm from "./QueryForm";
 import "./HomePage.css";
 import "./Popup.css";
 import Header from "./Header";
+import MobileNo from "./MobileNo";
 
 const HomePage = () => {
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
 
-  const handleServicesClick = () => {
-    navigate("/services");
-  };
-
   return (
     <>
-     <Header/>
+      <Header />
       <div className="homepage">
         {/* Hero Section */}
         <section className="hero-section">
           <div className="text9">
-            <h1>
+            <h1 style={{ marginTop: "40px" }}>
               <span className="highlight">Welcome to PrimeFiber</span>
             </h1>
             <p>
@@ -29,32 +26,29 @@ const HomePage = () => {
                 Fast, Reliable, and Affordable Internet for Everyone!
               </span>
             </p>
-            <a href="tel:+91 9762039307" className="cta-button">
-              <i className="fa-solid fa-phone"> 9762039307</i>
-            </a>
-
-            <a className="cta-button" onClick={() => setShowPopup(true)}>
-              <i className="fa-solid fa-envelope">  Open Enquiry Form</i>
-            </a>
-
-            <div className="home-container" style={{ marginTop: "10px"}}>
-              {/* <button className="open-popup-btn btn btn-primary" onClick={() => setShowPopup(true)}>
-                Open Enquiry Form
-              </button> */}
-
-              {/* Pop-up Form */}
-              {showPopup && (
-                <div className="popup-overlay">
-                  <div className="popup-content">
-                    {/* Close Button */}
-                    <button className="close-btn" onClick={() => setShowPopup(false)}>
-                      ✖
-                    </button>
-                    <QueryForm />
-                  </div>
-                </div>
-              )}
+            <div className="cta-container">
+              <a href={`tel:+91${(<MobileNo />)}`} className="cta-button">
+                <MobileNo />
+              </a>
+              <button className="cta-button" onClick={() => setShowPopup(true)}>
+                <i className="fa-solid fa-envelope"></i> Open Enquiry Form
+              </button>
             </div>
+
+            {/* Pop-up Form */}
+            {showPopup && (
+              <div className="popup-overlay">
+                <div className="popup-content">
+                  <button
+                    className="close-btn"
+                    onClick={() => setShowPopup(false)}
+                  >
+                    ✖
+                  </button>
+                  <QueryForm />
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -68,248 +62,82 @@ const HomePage = () => {
           </ul>
         </section>
 
-        {/* Services Section */}
-        <section className="services">
-          <button
-            style={{
-              backgroundColor: "#003580",
-              width: "176px",
-              height: "30px",
-              color: "white",
-              marginTop: "55px",
-              marginBottom: "55px",
-            }}
-            onClick={handleServicesClick}
-          >
-            Our Services
-          </button>
-          <h1>
-            Surf the Web with Ease: Discover the Best Internet Services for You!
-          </h1>
-          <p>
-            With cutting-edge technology and a commitment to seamless
-            connectivity, these providers offer reliable, high-speed internet that
-            keeps you connected and productive at all times.
-          </p>
+        {/* Service Details */}
+        <section className="services-grid">
+          {[
+            {
+              img: "../src/images/wi-fi-router-with-blue-optical-fiber.jpg",
+              title: "Home Broadband",
+              desc: "Experience speeds up to 400 Mbps.",
+            },
+            {
+              img: "../src/images/office.jpg",
+              title: "Bandwidth For Business",
+              desc: "Guaranteed uptime, security & support.",
+            },
+            {
+              img: "../src/images/pexels-feril-sunu-3332347-5648305.jpg",
+              title: "Internet Lease Line",
+              desc: "Custom high-speed connections.",
+            },
+          ].map((service, index) => (
+            <div key={index} className="service-box">
+              <img src={`/images/${service.img}`} alt={service.title} />
+              <h2>{service.title}</h2>
+              <p>{service.desc}</p>
+            </div>
+          ))}
         </section>
 
-        {/* Service Details Section */}
-        <section
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            marginTop: "50px",
-          }}
-        >
-          <div style={{ width: "300px" }}>
-            <img
-              src={"./src/images/pexels-verma-harshil-4218546.jpg"}
-              style={{ width: "300px" }}
-              alt="Service Image"
-            />
-            <h2>Home Broadband</h2>
-            <p>
-              Experience lightning-fast internet speeds. Whether you're a casual
-              user or a power user, we have plans for everyone from 50 Mbps to 400
-              Mbps.
-            </p>
-          </div>
-
-          <div style={{ width: "300px" }}>
-            <img
-              src={"./src/images/pexels-pixabay-159304.jpg"}
-              style={{ width: "300px" }}
-              alt="Service Image"
-            />
-            <h2>Bandwidth For Business</h2>
-            <p>
-              Bandwidth for business is more than just fast internet speeds. With
-              features like guaranteed uptime, advanced security, and 24/7
-              customer support.
-            </p>
-          </div>
-
-          <div style={{ width: "300px" }}>
-            <img
-              src={"./src/images/pexels-brett-sayles-5326748.jpg"}
-              style={{ width: "300px" }}
-              alt="Service Image"
-            />
-            <h2>Internet Lease Line</h2>
-            <p>
-              High-speed internet that's customized to your exact needs, internet
-              lease lines offer the ultimate in seamless connectivity for
-              businesses that demand the best.
-            </p>
+        {/* Features Icons */}
+        <section className="features-icons">
+          <h1>Our Features</h1>
+          <div className="icons-grid">
+            {[
+              { icon: "fa-star", text: "Seamless Connectivity" },
+              { icon: "fa-phone", text: "24/7 Support" },
+              { icon: "fa-charging-station", text: "Quick Installation" },
+              { icon: "fa-rocket", text: "Fastest Service" },
+              { icon: "fa-scale-balanced", text: "Flexible Bandwidth" },
+            ].map((feature, index) => (
+              <div key={index} className="icon-circle">
+                <i className={`fa-solid ${feature.icon}`}></i>
+                <p>{feature.text}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Feature Icons */}
-        <section className="services">
-          <h1
-            style={{
-              marginTop: "55px",
-            }}
-          >
-            Our Features
-          </h1>
-          <div className="container">
-            <div className="circle">
-              <p>
-                <i className="fa-solid fa-star"></i>
-                <br />
-                Seamless Internet Connectivity
-              </p>
+        {/* Customer Benefits */}
+        <section className="boxes-container">
+          {[
+            {
+              icon: "fa-headset",
+              text: "Fast virtual assistants for accurate responses.",
+            },
+            {
+              icon: "fa-house",
+              text: "Smart home automation with reliable connectivity.",
+            },
+            { icon: "fa-gamepad", text: "Seamless online gaming experience." },
+            { icon: "fa-music", text: "Stream multiple devices without lag." },
+            {
+              icon: "fa-wifi",
+              text: "High-speed Wi-Fi for uninterrupted browsing.",
+            },
+            {
+              icon: "fa-video",
+              text: "Buffer-free HD video calls and streaming.",
+            },
+          ].map((benefit, index) => (
+            <div key={index} className="box">
+              <i className={`fa-solid ${benefit.icon}`}></i>
+              <p>{benefit.text}</p>
             </div>
-            <div className="circle">
-              <p>
-                <i className="fa-solid fa-phone"></i>
-                <br />
-                24/7 Customer Support
-              </p>
-            </div>
-            <div className="circle">
-              <p>
-                <i className="fa-solid fa-charging-station"></i>
-                <br />
-                Quick Installation
-              </p>
-            </div>
-            <div className="circle">
-              <p>
-                <i className="fa-solid fa-rocket"></i>
-                <br />
-                Fastest Service
-              </p>
-            </div>
-            <div className="circle">
-              <p>
-                <i className="fa-solid fa-scale-balanced"></i>
-                <br />
-                Flexible Bandwidth
-              </p>
-            </div>
-          </div>
+          ))}
         </section>
 
-        {/* Customer Benefits Section */}
-        <section>
-          <div className="boxes-container">
-            <div className="box">
-              <p>
-                <i className="fa-solid fa-headset feature-icons"></i>
-                <br />
-                With faster internet speeds from Prime Fiber, virtual assistants
-                can quickly access and process large amounts of data, enabling them
-                to provide you with more accurate and personalized responses to
-                user queries.
-              </p>
-            </div>
-            <div className="box">
-              <p>
-                <i className="fa-solid fa-house feature-icons"></i>
-                <br />
-                Transform your home with Prime fiber internet’s fast, reliable, and
-                secure connectivity for smart home automation and personalized
-                living.
-              </p>
-            </div>
-            <div className="box">
-              <p>
-                <i className="fa-solid fa-gamepad feature-icons"></i>
-                <br />
-                Experience seamless and uninterrupted entertainment experience.
-                Connect with multiple players online and conquer the digital world
-                with superfast internet.
-              </p>
-            </div>
-            <div className="box">
-              <p>
-                <i className="fa-solid fa-music feature-icons"></i>
-                <br />
-                Prime Fiber supports multiple devices, allowing users to stream on
-                multiple devices simultaneously without any loss in speed or
-                quality.
-              </p>
-            </div>
-            <div className="box">
-              <p>
-                <i className="fa-solid fa-wifi feature-icons"></i>
-                <br />
-                Experience lightning-fast internet with PrimeFiber Stream, Connect,
-                Play multi-level games online with Prime fiber that never slows down.
-              </p>
-            </div>
-            <div className="box">
-              <p>
-                <i className="fa-solid fa-video feature-icons"></i>
-                <br />
-                With faster internet speeds from PrimeFiber, virtual assistants can
-                quickly access and process large amounts of data, enabling them to
-                provide you with more accurate and personalized responses to user
-                queries.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us Section */}
-        <section style={{ display: "flex", marginTop: "55px" }}>
-          <div>
-            {/* <button
-              style={{
-                backgroundColor: "#003580",
-                width: "176px",
-                height: "30px",
-                color: "white",
-                marginBottom: "25px",
-                marginLeft: "95px",
-              }}
-            >
-              Why Choose Us
-            </button> */}
-            <div style={{ marginLeft: "100px" }}>
-              <h1>Explore The Best Of Digital World</h1>
-              {/* <i className="fa-solid fa-greater-than"></i> */}
-              <h3>Lightning-Fast Speeds</h3>
-              <p>Enjoy speeds ranging from 50 Mbps to 400 Mbps and beyond.</p>
-              {/* <i className="fa-solid fa-greater-than"></i> */}
-              <h3>Unparalleled Reliability</h3>
-              <p>Count on 24/7 monitoring for uninterrupted internet access.</p>
-
-              {/* <i className="fa-solid fa-greater-than"></i> */}
-              <h3>Advanced Security</h3>
-              <p>
-                Protect your online activity and data with advanced security
-                features.
-              </p>
-              {/* <i className="fa-solid fa-greater-than"></i> */}
-              <h3>Dedicated Customer Support</h3>
-              <p>Get the help you need with dedicated customer support.</p>
-              {/* <i className="fa-solid fa-greater-than"></i> */}
-              <h3>Flexible Plans</h3>
-              <p>
-                Choose from a range of plans to fit your budget and requirements.
-              </p>
-            </div>
-          </div>
-          <div>
-            <img
-              src="src/images/laptop-which-there-is-world-people-drawn.jpg"
-              alt="Digital World"
-              style={{
-                width: "500px",
-                marginLeft: "100px",
-                height: "380px",
-                marginBottom: "60px",
-                marginTop: "55px",
-              }}
-            />
-          </div>
-        </section>
-
-        {/* Footer Section */}
+        {/* Footer */}
         <Footer />
       </div>
     </>

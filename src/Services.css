@@ -77,10 +77,8 @@ ul {
 
 ul li {
     font-size: 1rem;
-    color: #555;
     margin-bottom: 5px;
     padding: 5px 0;
-    border-bottom: 1px solid #ddd;
 }
 
 ul li:last-child {
@@ -310,16 +308,44 @@ body, html {
 }
 
 /* Hero Section Background */
-.hero-section10{
+
+
+  .hero-section10 {
     background-image: url('./images/data-cables-room.jpg');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
-    background-attachment: fixed; 
-    /* background-size: contain; */
-    height: 500px;
-    /* color:black; */
-  }
+    background-attachment: scroll; /* Change from fixed to scroll for better mobile compatibility */
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Ensure proper responsiveness */
+@media (max-width: 768px) {
+    .hero-section10 {
+        height: 350px; /* Reduce height on smaller screens */
+        padding: 1.5rem;
+    }
+
+    .hero-section10 h1 {
+        font-size: 2rem; /* Reduce font size for smaller screens */
+    }
+
+    .hero-section10 p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
 
 /* Highlighted Text */
 .highlight {

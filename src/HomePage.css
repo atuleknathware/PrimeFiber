@@ -1,219 +1,193 @@
-/* styles.css */
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  /* .homepage {
-    text-align: center;
-    padding: 0;
-    margin-top: 69px;
-  } */
-  
-  /* Hero Section */
-  .hero-section {
-    background-color: #004aad;
-    color: #fff;
-    padding: 3rem 1rem;
-  }
-  .highlight {
-    background-color: #1616178a; /* Change to any color */
-    padding: 5px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url("./images/mother-twins-using-different-devices-home-2048x1365.jpg") no-repeat center/cover;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.highlight {
+  background-color: rgba(22, 22, 23, 0.6);
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.cta-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cta-button {
+    background-color: #ffd700;
+    color: #004aad;
+    padding: 12px 20px;
     border-radius: 5px;
-    color: white; /* Adjust text color for contrast */
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  
+  .cta-button i {
+    font-size: 1.2rem;
+  }
+  
+
+.cta-button:hover {
+  background-color: #f6c700;
+}
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    align-items: center; /* Center the buttons */
+    width: 100%;
+  }
+
+  .cta-button {
+    width: 30%; /* Full width on small screens */
+    justify-content: center; /* Center text and icon */
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Features Section */
+.features-section {
+  text-align: center;
+  padding: 50px;
+  background: #f8f9fa;
+}
+
+/* Services Grid */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px;
+}
+
+.service-box {
+  width: 300px;
+  text-align: center;
+}
+
+.service-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Features Icons Section */
+.features-icons {
+  text-align: center;
+  padding: 50px;
+}
+
+.icons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon-circle {
+  width: 120px;
+  height: 120px;
+  background: #003580;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.icon-circle i {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.icon-circle:hover {
+  background: #ffd700;
+  color: #003580;
+}
+
+/* Why Choose Us - 3x3 Grid Centered */
+.boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Ensures all items are centered */
+  gap: 20px;
+  padding: 50px;
+}
+
+.box {
+  width: 30%; /* Ensures three boxes in a row */
+  min-width: 280px;
+  background: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Responsive Design Fixes */
+@media (max-width: 1024px) {
+  .box {
+    width: 45%; /* Ensures two boxes per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    padding: 50px 20px;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+  }
+  
+  .icons-grid {
+    gap: 20px;
+  }
+  
+  .icon-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .box {
+    width: 100%; /* Ensures one box per row on small screens */
+  }
 }
 
 
-  .hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .cta-button {
-    padding: 0.8rem 2rem;
-    background-color: #ffd700;
-    color: #004aad;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin: 0 10px;
-  }
-  
-  .cta-button:hover {
-    background-color: #f6c700;
-  }
-  
-  /* Features Section */
-  .features-section {
-    background-color: #f8f9fa;  
-    padding: 2rem 1rem;
-  }
-  
-  .features-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .features-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .features-section li {
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
-  }
-  
-  /* Plans Section */
-  .plans-section {
-    padding: 2rem 1rem;
-  }
-  
-  .plan-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .plan-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .plan-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #004aad;
-  }
-  
-  .plan-card p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .plan-button {
-    padding: 0.5rem 1rem;
-    background-color: #004aad;
-    color: #fff;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .plan-button:hover {
-    background-color: #003580;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-  
-
-  .hero-section{
-    background-image: url('./images/mother-twins-using-different-devices-home-2048x1365.jpg');
-    background-size: cover; /* Ensures the image covers the entire viewport */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    /* background-size: contain; */
-    height: 500px;
-    /* color:black; */
-  }
-
-  .text9{
-    margin-top: 100px;
-  }
-  
-
- /* Centering the container */
-.boxes-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns in a row */
-    gap: 30px; 
-   max-width:max-content;
-    margin:  auto; 
-    padding: 20px;
-  }
-  
-  /* Box styling */
-  .box {
-    color: black;
-    width: 350px;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    /* font-size: 1.2rem; */
-    /* font-weight: bold; */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
-
-  }
-
-  .box:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-  
-  .box:hover{
-    background-color: #ffd700;
-    border: solid 6px #003580;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between; /* Adds space between circles */
-    align-items: center; /* Centers circles vertically */
-    width: 80vw; /* Full width of the viewport */
-    height: 300px; /* Adjust the height as needed */
-    padding: 0 10px; 
-    margin-left: 10%;
-  }
-  
-  .circle {
-    width: 150px;
-    height: 145px;
-    background-color: #003580;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: bold;
-    padding: 20px;
-    border: solid 6px #ccc;
-    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
-  .circle:hover {
-    background-color: #ffd700;
-    border: solid 6px #003580;
-  }
-  

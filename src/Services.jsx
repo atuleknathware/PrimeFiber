@@ -1,66 +1,76 @@
 import React from "react";
 import "./Services.css"; // Import the external CSS file
-import Footer from './Footer.jsx'
+import Footer from "./Footer.jsx";
 import Header from "./Header.jsx";
-
+import MobileNo from "./MobileNo.jsx";
 
 const Services = () => {
   return (
     <>
-<Header />
-<section className="hero-section10">
-    <div className="text">
-        <h1><span className="highlight">Welcome to PrimeFiber</span></h1>
-        <p style={{textAlign:"center"}}><span className="highlight" >Fast, Reliable, and Affordable Internet for Everyone!</span></p>
-        <a href="tel:+91 9762039307" className="cta-button" style={{marginLeft:"45%"}}>
-              <i className="fa-solid fa-phone"> 9762039307</i>
+      <Header />
+      <section className="hero-section10">
+        <div className="text">
+          <h1>
+            <span className="highlight">Welcome to PrimeFiber</span>
+          </h1>
+          <p style={{ textAlign: "center" }}>
+            <span className="highlight">
+              Fast, Reliable, and Affordable Internet for Everyone!
+            </span>
+          </p>
+          <div style={{ width: "400px", height: "200px" }}>
+            <a href={`tel:+91${(<MobileNo />)}`} className="cta-button">
+              {<MobileNo />}
             </a>
-    </div>
-</section>
+          </div>
+        </div>
+      </section>
 
-    <div style={{display: "flex"}}>
-      {/* <h1 style={{margin:"4% auto"}}>Our Service</h1> */}
+      <div style={{ display: "flex" }}>
+        {/* <h1 style={{margin:"4% auto"}}>Our Service</h1> */}
       </div>
-      <h1 style={{margin:"4% auto"}}>Explore the next ISP unlimited possibilities</h1>
+      <h1 style={{ margin: "4% auto" }}>
+        Explore the next ISP unlimited possibilities
+      </h1>
 
       <div className="service-container">
         <div className="box">
           <div>
-          <h5>Broadband</h5>
-          <p>Experience lightning-fast broadband connectivity...</p>
-          {/* <button className="btn btn-primary">Enquire Now</button> */}
+            <h5>Broadband</h5>
+            <p>Experience lightning-fast broadband connectivity...</p>
+            {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
 
         <div className="box">
           <div>
-          <h5>Leased Line</h5>
-          <p>Unlock unparalleled reliability and dedicated bandwidth...</p>
-          {/* <button className="btn btn-primary">Enquire Now</button> */}
+            <h5>Leased Line</h5>
+            <p>Unlock unparalleled reliability and dedicated bandwidth...</p>
+            {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
 
         <div className="box">
           <div>
-          <h5>OTT Services</h5>
-          <p>Access a diverse range of Over-The-Top (OTT) services...</p>
-          {/* <button className="btn btn-primary">Enquire Now</button> */}
+            <h5>OTT Services</h5>
+            <p>Access a diverse range of Over-The-Top (OTT) services...</p>
+            {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
 
         <div className="box">
           <div>
-          <h5>Telephone Line</h5>
-          <p>Stay connected with our dependable telephone line service...</p>
-          {/* <button className="btn btn-primary">Enquire Now</button> */}
+            <h5>Telephone Line</h5>
+            <p>Stay connected with our dependable telephone line service...</p>
+            {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
 
         <div className="box">
           <div>
-          <h5>Cloud & Hosting</h5>
-          <p>Empower your online endeavors with robust cloud solutions...</p>
-          {/* <button className="btn btn-primary">Enquire Now</button> */}
+            <h5>Cloud & Hosting</h5>
+            <p>Empower your online endeavors with robust cloud solutions...</p>
+            {/* <button className="btn btn-primary">Enquire Now</button> */}
           </div>
         </div>
       </div>
@@ -101,7 +111,7 @@ const Services = () => {
           <li>Upto 6+ OTT Apps (Hotstar, Sony Live, Zee5, etc)</li>
         </ul>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
