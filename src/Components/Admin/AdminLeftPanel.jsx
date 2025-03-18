@@ -23,13 +23,13 @@ const AdminLeftPanel = () => {
           <i className="fas fa-cogs" /> <span>Bussiness Plan Management</span>
         </Link>
         <Link to={`/admin/logo/update/`}>
-          <i className="fas fa-chart-bar" /> <span>Logo</span>
+          <i className="fas fa-chart-bar" /> <span>Logo Update</span>
         </Link>
         <Link to={`/admin/updateMobileno`}>
           <i className="fas fa-chart-bar" /> <span>update mobile no</span>
         </Link>
         <Link to={`/admin/AddmobileNo`}>
-          <i className="fas fa-chart-bar" /> <span> Manage MobileNo</span>
+          <i className="fas fa-chart-bar" /> <span> Add MobileNo</span>
         </Link>
         <a href="#" onClick={handleLogOut}>
           <i className="fas fa-sign-out-alt" /> <span>Logout</span>
