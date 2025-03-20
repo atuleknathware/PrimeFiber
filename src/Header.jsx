@@ -14,8 +14,7 @@ const Header = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/logo");
-      console.log("API Response:", response.data);
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}logo`);
       setLogo(response.data.data);
     } catch (error) {
       toast.error("Failed to fetch data", { position: "top-right" });

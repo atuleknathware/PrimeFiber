@@ -10,7 +10,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/user/getall"
+          `${import.meta.env.VITE_API_BASE_URL}user/getall`
         );
         console.log("API Response:", response.data);
         setUsers(response.data.data);

@@ -26,7 +26,7 @@ const EditBusinessPlans = () => {
 
       useEffect(() => {
         
-        axios.get(`http://localhost:8080/api/businessPlans/getone/${id}`)
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}businessPlans/getone/${id}`)
         .then((res)=>{
             console.log(res);
             setFormData(res.data.data)
@@ -40,7 +40,7 @@ const EditBusinessPlans = () => {
     
       const handleSubmit = async(e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:8080/api/businessPlans/update/${id}`,formData) 
+        await axios.put(`${import.meta.env.VITE_API_BASE_URL}businessPlans/update/${id}`,formData) 
         .then((res)=>{
           toast.success(res.data.message,{position:"top-right"})
           navigate("/admin/businessplan")

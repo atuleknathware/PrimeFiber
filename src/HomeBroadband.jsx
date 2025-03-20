@@ -13,7 +13,7 @@ const HomeBroadband = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/plans/getAll"
+          `${import.meta.env.VITE_API_BASE_URL}plans/getAll`
         );
         console.log("API Response:", response.data);
         setUsers(response.data.data);
@@ -33,9 +33,10 @@ const HomeBroadband = () => {
       <section className="hero-section">
         <div className="hero-content">
           <h1>
-            Welcome to <span className="highlight">PrimeFiber</span>
+          <span className="highlight">   Welcome to PrimeFiber</span>
           </h1>
-          <p>Fast, Reliable, and Affordable Internet for Everyone!</p>
+          
+          <p className="highlight">Fast, Reliable, and Affordable Internet for Everyone!</p>
           <a href={`tel:+91${MobileNo}`} className="cta-button">
             <MobileNo />
           </a>
@@ -86,7 +87,7 @@ const HomeBroadband = () => {
                     <td>{user.threeMonth}</td>
                     <td>{user.sixMonth}</td>
                     <td>{user.twelveMonth}</td>
-                    <td>{user.ott}</td>
+                    <td>{user.ott==='active'?<i className="fa-solid fa-check green"></i>:<i className="fa-solid fa-xmark red"></i>}  </td>
                   </tr>
                 ))
               ) : (

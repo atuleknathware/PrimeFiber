@@ -11,7 +11,7 @@ const UpdateMobileNo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/mobileno/");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}mobileno/`);
         setMobileNumbers(response.data.data);
       } catch (error) {
         console.error("Error fetching mobile numbers:", error);
@@ -43,7 +43,7 @@ const UpdateMobileNo = () => {
     }
 
     try {
-      await axios.put(`http://localhost:8080/api/mobileno/${selectedId}`, {
+      await axios.put(`${import.meta.env.VITE_API_BASE_URL}mobileno/${selectedId}`, {
         mobileNo: newMobileNo,
       });
       alert("Mobile number updated successfully!");

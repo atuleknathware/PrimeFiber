@@ -10,7 +10,7 @@ const AddMobileNo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/mobileno/");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}mobileno/`);
         setGetMobileNo(response.data.data);
       } catch (error) {
         console.error("Error fetching mobile numbers:", error);
@@ -33,12 +33,12 @@ const AddMobileNo = () => {
     }
 
     try {
-      await axios.post("http://localhost:8080/api/mobileno/", { mobileNo });
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}mobileno/`, { mobileNo });
       alert("Mobile number added successfully!");
       setMobileNo(""); // Clear input field
 
       // Refresh the list after adding new number
-      const response = await axios.get("http://localhost:8080/api/mobileno/");
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}mobileno/`);
       setGetMobileNo(response.data.data);
     } catch (error) {
       console.error("Error adding mobile number:", error);

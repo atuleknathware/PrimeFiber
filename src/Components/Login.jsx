@@ -28,7 +28,7 @@ e.preventDefault();
 
 try{
     console.log({email,password});
-    const data = await axios.post(`${import.meta.env.VITE_API_URL}admin`,{email,password});
+    const data = await axios.post(`${import.meta.env.VITE_API_BASE_URL}admin`,{email,password});
     handleSuccess(data?.data?.message);
     // console.log(JSON.stringify(data?.data.user));
     localStorage.setItem('loggedInUser',JSON.stringify(data?.data?.user));

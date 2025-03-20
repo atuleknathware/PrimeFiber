@@ -23,7 +23,7 @@ const AddBusinessPlan = () => {
     
       const handleSubmit = async(e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/api/businessPlans/create ",formData)
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}businessPlans/create`,formData)
         .then((res)=>{
           toast.success(res.data.message,{position:"top-right"})
           navigate("/admin/businessplan")

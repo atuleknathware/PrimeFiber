@@ -9,7 +9,7 @@ const BusinessPlan = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get("http://localhost:8080/api/businessPlans/getall");
+          const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}businessPlans/getall`);
           console.log("API Response:", response.data); // Log response
           setUsers(response.data.data); 
         } catch (error) {
@@ -24,9 +24,9 @@ const BusinessPlan = () => {
 
   const deleteUser = async (userId) => {
     try {
-      // const res = await axios.delete(`http://localhost:8080/api/delete/${userId}`);
+      // const res = await axios.delete(`${import.meta.env.VITE_API_BASE_URL}delete/${userId}`);
       const res = await axios.delete(
-        `http://localhost:8080/api/businessPlans/delete/${userId}`
+        `${import.meta.env.VITE_API_BASE_URL}businessPlans/delete/${userId}`
       );
 
       setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));

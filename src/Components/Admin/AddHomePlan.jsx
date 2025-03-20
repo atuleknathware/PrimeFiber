@@ -29,7 +29,7 @@ const AddHomePlan = () => {
       },[formData])
       const handleSubmit = async(e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/api/plans/create ",formData)
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}plans/create`,formData)
         .then((res)=>{
           toast.success(res.data.message,{position:"top-right"})
           setFormData({

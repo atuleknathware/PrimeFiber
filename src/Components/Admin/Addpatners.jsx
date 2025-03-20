@@ -14,7 +14,7 @@ const Addpatners = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:8080/api/logo/getone/${id}`)
+        .get(`${import.meta.env.VITE_API_BASE_URL}logo/getone/${id}`)
         .then((res) => {
           console.log("API Response:", res.data);
           if (res.data.data?.img) {
@@ -49,7 +49,7 @@ const Addpatners = () => {
     if (id) {
       // Update Logo
       await axios
-        .put(`http://localhost:8080/api/logo/update/${id}`, formDataToSend, {
+        .put(`${import.meta.env.VITE_API_BASE_URL}logo/update/${id}`, formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
@@ -63,7 +63,7 @@ const Addpatners = () => {
     } else {
       // Create New Logo
       await axios
-        .post("http://localhost:8080/api/logo/create", formDataToSend, {
+        .post(`${import.meta.env.VITE_API_BASE_URL}logo/create`, formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {

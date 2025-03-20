@@ -29,7 +29,7 @@ const QueryForm = () => {
     }
 
     try {
-      const url = "http://localhost:8080/api/query";
+      const url = `${import.meta.env.VITE_API_BASE_URL}query`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

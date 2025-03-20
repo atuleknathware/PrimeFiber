@@ -16,7 +16,7 @@ const Logo = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/logo");
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}logo`);
       console.log("API Response:", response.data);
       setCurrentImage(response.data.data);
     } catch (error) {
@@ -39,7 +39,7 @@ const Logo = () => {
     const { _id } = currentImage;
 
     await axios
-      .put(`http://localhost:8080/api/logo/${_id}`, formDataToSend, {
+      .put(`${import.meta.env.VITE_API_BASE_URL}logo/${_id}`, formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((res) => {

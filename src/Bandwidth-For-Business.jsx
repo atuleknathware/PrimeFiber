@@ -18,7 +18,7 @@ const Business = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/businessPlans/getall"
+        `${import.meta.env.VITE_API_BASE_URL}businessPlans/getall`
       );
       setUsers(response.data.data);
     } catch (error) {
@@ -29,7 +29,7 @@ const Business = () => {
 
   const fetchData1 = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/logo/");
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}logo/`);
       setLogo(response.data.data);
     } catch (error) {
       toast.error("Failed to fetch logos", { position: "top-right" });

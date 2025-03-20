@@ -8,7 +8,7 @@ const MobileNo = () => {
   useEffect(() => {
     const fetchMobileNo = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/mobileno/");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}mobileno/`);
         console.log("Fetched Mobile No:", response.data.data[0].mobileNo);
         setMobileno(response.data.data[0].mobileNo);
       } catch (error) {
