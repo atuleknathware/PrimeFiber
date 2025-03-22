@@ -21,9 +21,7 @@ const ContactUs = () => {
               <span className="highlight">We would love to hear from you</span>
             </p>
             <div style={{ width: "400px" }}>
-              <a href={`tel:+91${(<MobileNo />)}`} className="cta-button">
-                {<MobileNo />}
-              </a>
+             <MobileNo />
             </div>
           </div>
         </section>
@@ -52,15 +50,8 @@ const ContactUs = () => {
             <div className="box">
               <i className="fa-solid fa-phone-volume feature-icons"></i>
               <h5>Phone Number</h5>
-              <p>
-                <a href={`tel:+91${(<MobileNotwo />)}`}>{<MobileNotwo />}</a>
-                (24/7 Missed Call Number)
-              </p>
-
-              <p>
-                <a href={`tel:+91${(<MobileNo />)}`}>{<MobileNo />}</a>
-                (24/7 Missed Call Number)
-              </p>
+             
+               Always available for assistance. We are more than happy to help you.
             </div>
             <div className="box">
               <i className="fa-solid fa-envelope feature-icons"></i>
@@ -78,7 +69,7 @@ const ContactUs = () => {
         {/* Offer Section */}
         <section className="offer-section">
           <img
-            src="src/images/pexels-verma-harshil-4218546.jpg"
+            src="./images/pexels-verma-harshil-4218546.jpg"
             alt="Prime Fiber Offer"
           />
           <div>

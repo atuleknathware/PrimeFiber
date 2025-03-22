@@ -37,16 +37,14 @@ const HomeBroadband = () => {
           </h1>
           
           <p className="highlight">Fast, Reliable, and Affordable Internet for Everyone!</p>
-          <a href={`tel:+91${MobileNo}`} className="cta-button">
             <MobileNo />
-          </a>
         </div>
       </section>
 
       {/* OTT Banner */}
       <section>
         <img
-          src="src/images/OTT_NEW.webp"
+          src="./images/OTT_NEW.webp"
           alt="OTT Banner"
           className="ott-banner"
         />

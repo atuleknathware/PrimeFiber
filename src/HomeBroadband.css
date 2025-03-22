@@ -41,6 +41,8 @@ body {
     font-weight: bold;
     text-decoration: none;
     transition: background 0.3s;
+    width: 60%;
+    margin: 0 20%;
 }
 
 .cta-button:hover {

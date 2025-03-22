@@ -27,9 +27,7 @@ const HomePage = () => {
               </span>
             </p>
             <div className="cta-container">
-              <a href={`tel:+91${(<MobileNo />)}`} className="cta-button">
                 <MobileNo />
-              </a>
               <button className="cta-button" onClick={() => setShowPopup(true)}>
                 <i className="fa-solid fa-envelope"></i> Open Enquiry Form
               </button>
@@ -66,23 +64,23 @@ const HomePage = () => {
         <section className="services-grid">
           {[
             {
-              img: "../src/images/wi-fi-router-with-blue-optical-fiber.jpg",
+              img: "./images/wi-fi-router-with-blue-optical-fiber.jpg",
               title: "Home Broadband",
               desc: "Experience speeds up to 400 Mbps.",
             },
             {
-              img: "../src/images/office.jpg",
+              img: "./images/office.jpg",
               title: "Bandwidth For Business",
               desc: "Guaranteed uptime, security & support.",
             },
             {
-              img: "../src/images/pexels-feril-sunu-3332347-5648305.jpg",
+              img: "./images/pexels-feril-sunu-3332347-5648305.jpg",
               title: "Internet Lease Line",
               desc: "Custom high-speed connections.",
             },
           ].map((service, index) => (
             <div key={index} className="service-box">
-              <img src={`/images/${service.img}`} alt={service.title} />
+              <img src={`${service.img}`} alt={service.title} />
               <h2>{service.title}</h2>
               <p>{service.desc}</p>
             </div>

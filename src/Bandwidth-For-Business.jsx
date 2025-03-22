@@ -53,9 +53,7 @@ const Business = () => {
               </span>
             </p>
             <div style={{ width: "400px", height: "200px" }}>
-              <a href={`tel:+91${MobileNo}`} className="cta-button">
                 <MobileNo />
-              </a>
             </div>
           </div>
         </section>
@@ -103,27 +101,27 @@ const Business = () => {
           <section className="partners-section">
             <img
               className="partners-logo"
-              src="src/logos/AsianHospital.jpg"
+              src="./images/logos/AsianHospital.jpg"
               alt="Asian Hospital"
             />
             <img
               className="partners-logo"
-              src="src/logos/DhootHospital.jpg"
+              src="./images/logos/DhootHospital.jpg"
               alt="Dhoot Hospital"
             />
             <img
               className="partners-logo"
-              src="src/logos/ENCORE.jpg"
+              src="./images/logos/ENCORE.jpg"
               alt="ENCORE"
             />
             <img
               className="partners-logo"
-              src="src/logos/Monginis.jpg"
+              src="./images/logos/Monginis.jpg"
               alt="Monginis"
             />
             <img
               className="partners-logo"
-              src="src/logos/MYFM.jpg"
+              src="./images/logos/MYFM.jpg"
               alt="MYFM"
             />
           </section>

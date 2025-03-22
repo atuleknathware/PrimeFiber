@@ -20,11 +20,11 @@ const MobileNo = () => {
   }, []);
 
   return (
-    <>
+    <a href={`tel:${mobileNo}`} className="cta-button">
       <div className="cta-container">
-        <i className="fa-solid fa-phone"></i> <p>{mobileNo}</p>
+        <i className="fa-solid fa-phone"></i> {mobileNo}
       </div>
-    </>
+    </a>
   );
 };
 

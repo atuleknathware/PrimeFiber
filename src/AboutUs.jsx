@@ -20,9 +20,7 @@ const AboutUs = () => {
                 Connect to a fast and reliable internet connection anywhere
               </span>
             </p>
-            <a href={`tel:+91${(<MobileNo />)}`} className="cta-button">
-              <div style={{ position: "inline" }}>{<MobileNo />}</div>
-            </a>
+           <MobileNo />
           </div>
         </section>
 
@@ -48,7 +46,7 @@ const AboutUs = () => {
           </div>
           <div className="about-image">
             <img
-              src="../src/images/laptop-which-there-is-world-people-drawn.jpg"
+              src="./images/laptop-which-there-is-world-people-drawn.jpg"
               alt="About PrimeFiber"
             />
           </div>
@@ -113,7 +111,7 @@ const AboutUs = () => {
           </div>
           <div className="quality-image">
             <img
-              src="../src/images/pexels-thirdman-5583254.jpg"
+              src="./images/pexels-thirdman-5583254.jpg"
               alt="Quality Service"
             />
           </div>
@@ -122,7 +120,7 @@ const AboutUs = () => {
         {/* Offer Section */}
         <section className="offer-section">
           <img
-            src="../src/images/pexels-verma-harshil-4218546.jpg"
+            src="./images/pexels-verma-harshil-4218546.jpg"
             alt="Prime Fiber Offer"
           />
           <div>

@@ -33,7 +33,7 @@ body, html {
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .cta-button {
@@ -62,7 +62,7 @@ body, html {
 }
 @media (max-width: 768px) {
   .cta-container {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center; /* Center the buttons */
     width: 100%;
   }
@@ -72,6 +72,7 @@ body, html {
     justify-content: center; /* Center text and icon */
     padding: 15px;
     font-size: 1.1rem;
+    width: 100%;
   }
 }
 
@@ -173,7 +174,7 @@ body, html {
   }
   
   .cta-container {
-    flex-direction: column;
+    flex-direction: row;
   }
   
   .icons-grid {

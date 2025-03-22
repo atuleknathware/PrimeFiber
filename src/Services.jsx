@@ -19,9 +19,7 @@ const Services = () => {
             </span>
           </p>
           <div style={{ width: "400px", height: "200px" }}>
-            <a href={`tel:+91${(<MobileNo />)}`} className="cta-button">
-              {<MobileNo />}
-            </a>
+              <MobileNo />
           </div>
         </div>
       </section>

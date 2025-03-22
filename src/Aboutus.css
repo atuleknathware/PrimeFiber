@@ -25,6 +25,8 @@ body, html {
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   font-weight: bold;
+  width: 60%;
+  margin: 0 20%;
 }
 
 .cta-button:hover {
@@ -188,5 +190,6 @@ body, html {
   .cta-button {
       padding: 0.6rem 1.5rem;
       font-size: 0.9rem;
+      width: 100%;
   }
 }
